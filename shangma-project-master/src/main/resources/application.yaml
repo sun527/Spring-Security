@@ -1,0 +1,61 @@
+server:
+  port: 10086
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.194.128:3306/Security?serverTimezone=Asia/Shanghai
+    username: root
+    password: rootroot
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 100MB
+  mail:
+    username: zhengzhoudaxuevip@163.com
+    password: CZUKZDIVVDPTGIBN
+    host: smtp.163.com
+  task:  ##修改spring自带线程池的大小 ThreadPoolTaskExecutor
+    execution:
+      pool:
+        core-size: 50
+        max-size: 50
+  redis:
+    host: localhost
+    port: 6379
+    jedis:
+      pool:
+        max-idle: 40
+        max-active: 40
+
+#  redis:
+#    sentinel:
+#      master: mymaster
+#      nodes:
+#        - 192.168.200.128:26379
+#        - 192.168.200.128:26444
+#        - 192.168.200.128:26555
+#    password: rootroot123
+#    jedis:
+#      pool:
+#        max-active: 30
+#        max-idle: 30
+
+logging:
+  level:
+    com:
+      shangma:
+        cn: debug
+  file:
+    path: E:\\opt\\javalog
+    max-size: 100MB
+
+aliyun:
+  endPoint: https://oss-cn-beijing.aliyuncs.com
+  accessKeyId: LTAI5tCEc1WbfRUTPGQcXds7
+  accessKeySecret: IcbRp0awEgzq6zIrPgHT90hYK2BOlq
+  bucket: cheduzi
+  baseUrl: https://cheduzi.oss-cn-beijing.aliyuncs.com/
+  uploadExt: [jpg,png]
+  imgWidth: 100
+  imgHeight: 100
+  uploadSize: 50
